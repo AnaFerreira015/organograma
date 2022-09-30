@@ -53,7 +53,10 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Form registeredContributor={contributor => addedContributor(contributor)} />
+      <Form 
+        teams={teams.map(team => team.name)} 
+        registeredContributor={contributor => addedContributor(contributor)} 
+      />
       {teams.map(team => (
         <Team 
           key={team.name} 
