@@ -8,8 +8,15 @@ const Team = (props) => {
     return (
         <section className='team' style={secondColor}>
             <h3 style={primaryColor}>{props.name}</h3>
-            <Collaborator />
-            <Collaborator />
+            <div className='collaborators'>
+                {props.collaborators.map(collaborator => (
+                    <Collaborator 
+                        name={collaborator.name} 
+                        role={collaborator.role}
+                        image={collaborator.image}
+                    />
+                ))}
+            </div>
         </section>
     )
 }
