@@ -5,7 +5,7 @@ import TextField from '../TextField'
 
 import './Form.css'
 
-const Form = () => {
+const Form = (props) => {
     const times = [
         'Programação',
         'Front-End',
@@ -22,7 +22,12 @@ const Form = () => {
 
     const savingData = (event) => {
         event.preventDefault()
-        console.log('submeteu os dados => ', name, role, image, team)
+        props.registeredContributor({
+            name,
+            role,
+            image,
+            team
+        })
     }
 
     return (
